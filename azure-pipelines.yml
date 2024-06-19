@@ -24,7 +24,7 @@ steps:
       #please provide your username
       $alias = '<nandanar1000@gmail.com>:'+ "$(Github.PAT)"
       #Please make sure, you remove https from azure-repo-clone-url
-      $sourceURL = 'https://$(AzureDevOps.PAT)@<azure-repo-clone-url>'
+      $sourceURL = 'https://$(AzureDevOps.PAT)@fabricnr@dev.azure.com/fabricnr/Test%20Git/_git/DS'
       #Please make sure, you remove https from github-repo-clone-url
       $destURL = 'https://' + $alias + '@github.com/n99R100/From-Fabric.git'
       #Check if the parent directory exists and delete
