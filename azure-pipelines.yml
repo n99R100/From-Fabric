@@ -20,11 +20,11 @@ steps:
       Write-Host ' - - - - - - - - - - - - - - - - - - - - - - - - - '
       $stageDir = '$(Build.SourcesDirectory)' | Split-Path
       $githubDir = $stageDir +"\"+"gitHub"
-      $destination = $githubDir +"\"+"DS.git"
+      $destination = $githubDir +"\"+"fabricnr.git"
       #please provide your username
       $alias = '<nandanar1000@gmail.com>:'+ "$(Github.PAT)"
       #Please make sure, you remove https from azure-repo-clone-url
-      $sourceURL = 'https://$(AzureDevOps.PAT)@fabricnr@dev.azure.com/fabricnr/Test%20Git/_git/DS'
+      $sourceURL = 'https://$(AzureDevOps.PAT)@dev.azure.com/fabricnr/Test%20Git/_git/DS'
       #Please make sure, you remove https from github-repo-clone-url
       $destURL = 'https://' + $alias + '@github.com/n99R100/From-Fabric.git'
       #Check if the parent directory exists and delete
