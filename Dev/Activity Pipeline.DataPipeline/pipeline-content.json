@@ -1,0 +1,148 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "4d23745a-f7f4-4c5d-93ac-572c07b7d1df",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "start_date": {
+              "value": {
+                "value": "@variables('Start Date')",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "end_date": {
+              "value": {
+                "value": "@variables('End Date')",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Data",
+        "dependsOn": [
+          {
+            "activity": "Start Date",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "End Date",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "75f3f6ea-7814-4425-af24-ecd84b0603f2",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Json To Delta",
+        "dependsOn": [
+          {
+            "activity": "Get Data",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "database": "LH",
+          "scripts": [
+            {
+              "text": {
+                "value": "SELECT CAST(CONVERT(VARCHAR(10), MAX([Start_Date]), 23) AS VARCHAR) AS RESULT\nFROM [LH].[dbo].[Earthquake_Sync_Data];",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ]
+        },
+        "externalReferences": {
+          "connection": "e6cbf16b-3c81-4338-a0d2-fa36e3ed70b2"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Latest Date",
+        "dependsOn": []
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "Start Date",
+          "value": {
+            "value": "@activity('Get Latest Date').output.resultSets[0].rows[0].RESULT",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Start Date",
+        "dependsOn": [
+          {
+            "activity": "Get Latest Date",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "End Date",
+          "value": {
+            "value": "@formatDateTime(convertTimeZone(utcNow(), 'UTC', 'Sri Lanka Standard Time'), 'yyyy-MM-dd')",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "End Date",
+        "dependsOn": []
+      }
+    ],
+    "variables": {
+      "Start Date": {
+        "type": "String"
+      },
+      "End Date": {
+        "type": "String"
+      }
+    }
+  }
+}
