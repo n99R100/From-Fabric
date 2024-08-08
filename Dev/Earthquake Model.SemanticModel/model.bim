@@ -1,0 +1,671 @@
+{
+  "compatibilityLevel": 1604,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.132.7378.2 (Main)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DatabaseQuery\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"WebModelingEdit\"]"
+      }
+    ],
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "annotations": [
+          {
+            "name": "PBI_IncludeFutureArtifacts",
+            "value": "False"
+          }
+        ],
+        "expression": [
+          "let",
+          "    database = Sql.Database(\"KYLUFGQJUBUU3EVATQ7FGVG73I-JJS5PT6ADK5ENA7BPRNLW3OEYE.datawarehouse.fabric.microsoft.com\", \"691d2112-4a50-410c-9d35-f3052a184075\")",
+          "in",
+          "    database"
+        ],
+        "kind": "m",
+        "lineageTag": "dfd4f554-54a7-4110-8ac4-f8b39f8eb517"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "17a0a339-9bbf-357c-fc2d-c410f04eb749",
+        "fromColumn": "MagnitudeID",
+        "fromTable": "Earthquake_Data",
+        "toColumn": "MagnitudeID",
+        "toTable": "Magnitude Type"
+      },
+      {
+        "name": "fd9226b3-b009-960b-9b5f-740028065882",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "id",
+        "fromTable": "GeoData",
+        "toColumn": "id",
+        "toTable": "Earthquake_Data"
+      },
+      {
+        "name": "e71ad4d0-0d68-5bb6-8126-7cbc3bf1e081",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "id",
+        "fromTable": "Event Details",
+        "toColumn": "id",
+        "toTable": "Earthquake_Data"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Magnitude Type",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "MagnitudeID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5b709c6d-d3ad-452d-9084-b3cc19a733ba",
+            "sourceColumn": "MagnitudeID",
+            "sourceLineageTag": "MagnitudeID",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "magnitudeType",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e7f46a59-77dc-48b1-a612-fe0c7988a07b",
+            "sourceColumn": "magnitudeType",
+            "sourceLineageTag": "magnitudeType",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "cdc32f3f-88d4-4586-b4d3-a947fd6953d9",
+        "partitions": [
+          {
+            "name": "Magnitude Type",
+            "mode": "directLake",
+            "source": {
+              "entityName": "Magnitude Type",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[Magnitude Type]"
+      },
+      {
+        "name": "GeoData",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c86d59eb-082b-4de4-b171-544d9207891b",
+            "sourceColumn": "id",
+            "sourceLineageTag": "id",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SummarizeBy"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "500db0e1-5d50-46fb-9006-86c755aa0698",
+            "sourceColumn": "longitude",
+            "sourceLineageTag": "longitude",
+            "sourceProviderType": "float",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SummarizeBy"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "723681ea-c883-4df0-8d3a-63cd89b35e19",
+            "sourceColumn": "latitude",
+            "sourceLineageTag": "latitude",
+            "sourceProviderType": "float",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "geometryType",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "74c095eb-d0ce-4536-a84c-9f1524fb6a1b",
+            "sourceColumn": "geometryType",
+            "sourceLineageTag": "geometryType",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "timezone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0ca209c8-2907-4117-ad9c-9e1eeab3c0fc",
+            "sourceColumn": "timezone",
+            "sourceLineageTag": "timezone",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4ddb8660-d1ec-4894-90e8-ef7ef8ed4155",
+        "partitions": [
+          {
+            "name": "GeoData",
+            "mode": "directLake",
+            "source": {
+              "entityName": "GeoData",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[GeoData]"
+      },
+      {
+        "name": "Event Details",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "465f07c3-4cd9-4591-97a3-50e542604ba5",
+            "sourceColumn": "id",
+            "sourceLineageTag": "id",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sources",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "17ac08fe-4af7-4a39-99b3-1416fae56bd7",
+            "sourceColumn": "sources",
+            "sourceLineageTag": "sources",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ids",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ebd5b2c5-3796-4c4f-9101-2112f2a163e7",
+            "sourceColumn": "ids",
+            "sourceLineageTag": "ids",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "url",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3a4556d3-f8d8-4177-8a88-f48204c374ca",
+            "sourceColumn": "url",
+            "sourceLineageTag": "url",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "detailUrl",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b93814fd-7896-4aad-82d0-dcfd06b9e433",
+            "sourceColumn": "detailUrl",
+            "sourceLineageTag": "detailUrl",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "fe8cd301-ee55-4c5e-8eea-2c9380fecbee",
+        "partitions": [
+          {
+            "name": "Event Details",
+            "mode": "directLake",
+            "source": {
+              "entityName": "Event Details",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[Event Details]"
+      },
+      {
+        "name": "Earthquake_Data",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "magnitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "bbf6be20-1db8-4a22-9fe5-a1e3dc32df21",
+            "sourceColumn": "magnitude",
+            "sourceLineageTag": "magnitude",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "felt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7879f693-d515-448e-a074-a15c97b1fa54",
+            "sourceColumn": "felt",
+            "sourceLineageTag": "felt",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "cdi",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "e532e355-4935-408e-b170-9e41e4759fb3",
+            "sourceColumn": "cdi",
+            "sourceLineageTag": "cdi",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "mmi",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "5e2f5560-36ae-418c-b039-161088ab4354",
+            "sourceColumn": "mmi",
+            "sourceLineageTag": "mmi",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "significance",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "43daa866-68f5-4194-813e-de6fb86cd162",
+            "sourceColumn": "significance",
+            "sourceLineageTag": "significance",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "nst",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "52bd2672-279b-4bc4-a532-066f9634d79b",
+            "sourceColumn": "nst",
+            "sourceLineageTag": "nst",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "dmin",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b6493805-9e81-4d27-ab4a-f9e5545eef83",
+            "sourceColumn": "dmin",
+            "sourceLineageTag": "dmin",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "rms",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3231ae1c-eb93-439d-89e0-2ecd12a9d478",
+            "sourceColumn": "rms",
+            "sourceLineageTag": "rms",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "gap",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0ffc48fd-8382-4b12-af70-ec40cd349ba0",
+            "sourceColumn": "gap",
+            "sourceLineageTag": "gap",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "magnitudeType",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5efe9b99-3dc1-49ea-8138-df25bdfbfac1",
+            "sourceColumn": "magnitudeType",
+            "sourceLineageTag": "magnitudeType",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2d69b6cd-927a-4a1f-a946-fb181df34876",
+            "sourceColumn": "longitude",
+            "sourceLineageTag": "longitude",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "84d39738-0fe0-4186-b8c4-3901f65f662b",
+            "sourceColumn": "latitude",
+            "sourceLineageTag": "latitude",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "depth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "59621da3-6171-4b47-8299-71c5a0357c88",
+            "sourceColumn": "depth",
+            "sourceLineageTag": "depth",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "71c7b533-c666-4704-83cc-36fffad632f3",
+            "sourceColumn": "id",
+            "sourceLineageTag": "id",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "dfa4ca0a-73a4-4485-90db-f3730667cffe",
+            "sourceColumn": "time",
+            "sourceLineageTag": "time",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MagnitudeID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c2e08f94-fec6-4ded-a912-c4bb533c4ab8",
+            "sourceColumn": "MagnitudeID",
+            "sourceLineageTag": "MagnitudeID",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2899eeba-2e80-4914-b73b-13f2a80ec907",
+        "partitions": [
+          {
+            "name": "Earthquake_Data",
+            "mode": "directLake",
+            "source": {
+              "entityName": "Earthquake_Data",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[Earthquake_Data]"
+      }
+    ]
+  }
+}

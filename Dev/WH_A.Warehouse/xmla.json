@@ -11,6 +11,1109 @@
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
     "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Earthquake_Data",
+        "sourceLineageTag": "[dbo].[Earthquake_Data]",
+        "columns": [
+          {
+            "name": "magnitude",
+            "dataType": "double",
+            "sourceColumn": "magnitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "magnitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "felt",
+            "dataType": "int64",
+            "sourceColumn": "felt",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "felt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cdi",
+            "dataType": "double",
+            "sourceColumn": "cdi",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "cdi",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "mmi",
+            "dataType": "double",
+            "sourceColumn": "mmi",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "mmi",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "significance",
+            "dataType": "int64",
+            "sourceColumn": "significance",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "significance",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "nst",
+            "dataType": "int64",
+            "sourceColumn": "nst",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "nst",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dmin",
+            "dataType": "double",
+            "sourceColumn": "dmin",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "dmin",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "rms",
+            "dataType": "double",
+            "sourceColumn": "rms",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "rms",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "gap",
+            "dataType": "double",
+            "sourceColumn": "gap",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "gap",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "magnitudeType",
+            "dataType": "string",
+            "sourceColumn": "magnitudeType",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "magnitudeType",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "longitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "latitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "depth",
+            "dataType": "double",
+            "sourceColumn": "depth",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "depth",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "id",
+            "dataType": "string",
+            "sourceColumn": "id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "time",
+            "dataType": "dateTime",
+            "sourceColumn": "time",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MagnitudeID",
+            "dataType": "int64",
+            "sourceColumn": "MagnitudeID",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "MagnitudeID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Earthquake_Data",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Event Details",
+        "sourceLineageTag": "[dbo].[Event Details]",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "string",
+            "sourceColumn": "id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "sources",
+            "dataType": "string",
+            "sourceColumn": "sources",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "sources",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ids",
+            "dataType": "string",
+            "sourceColumn": "ids",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ids",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "url",
+            "dataType": "string",
+            "sourceColumn": "url",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "url",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "detailUrl",
+            "dataType": "string",
+            "sourceColumn": "detailUrl",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "detailUrl",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Event Details",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Fact Table",
+        "sourceLineageTag": "[dbo].[Fact Table]",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "string",
+            "sourceColumn": "id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "magnitude",
+            "dataType": "double",
+            "sourceColumn": "magnitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "magnitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "felt",
+            "dataType": "int64",
+            "sourceColumn": "felt",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "felt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cdi",
+            "dataType": "double",
+            "sourceColumn": "cdi",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "cdi",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "mmi",
+            "dataType": "double",
+            "sourceColumn": "mmi",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "mmi",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "significance",
+            "dataType": "int64",
+            "sourceColumn": "significance",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "significance",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "nst",
+            "dataType": "int64",
+            "sourceColumn": "nst",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "nst",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dmin",
+            "dataType": "double",
+            "sourceColumn": "dmin",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "dmin",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "gap",
+            "dataType": "double",
+            "sourceColumn": "gap",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "gap",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "magnitudeType",
+            "dataType": "string",
+            "sourceColumn": "magnitudeType",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "magnitudeType",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "longitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "latitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "depth",
+            "dataType": "double",
+            "sourceColumn": "depth",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "depth",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "rms",
+            "dataType": "double",
+            "sourceColumn": "rms",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "rms",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "MagnitudeID",
+            "dataType": "int64",
+            "sourceColumn": "MagnitudeID",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "MagnitudeID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Fact Table",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "FactTable",
+        "sourceLineageTag": "[dbo].[FactTable]",
+        "columns": [
+          {
+            "name": "magnitude",
+            "dataType": "double",
+            "sourceColumn": "magnitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "magnitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "felt",
+            "dataType": "int64",
+            "sourceColumn": "felt",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "felt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cdi",
+            "dataType": "double",
+            "sourceColumn": "cdi",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "cdi",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "mmi",
+            "dataType": "double",
+            "sourceColumn": "mmi",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "mmi",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "significance",
+            "dataType": "int64",
+            "sourceColumn": "significance",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "significance",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "nst",
+            "dataType": "int64",
+            "sourceColumn": "nst",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "nst",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dmin",
+            "dataType": "double",
+            "sourceColumn": "dmin",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "dmin",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "rms",
+            "dataType": "double",
+            "sourceColumn": "rms",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "rms",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "gap",
+            "dataType": "double",
+            "sourceColumn": "gap",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "gap",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "magnitudeType",
+            "dataType": "string",
+            "sourceColumn": "magnitudeType",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "magnitudeType",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "longitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "latitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "depth",
+            "dataType": "double",
+            "sourceColumn": "depth",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "depth",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "id",
+            "dataType": "string",
+            "sourceColumn": "id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MagnitudeID",
+            "dataType": "int64",
+            "sourceColumn": "MagnitudeID",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "MagnitudeID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "FactTable",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "GeoData",
+        "sourceLineageTag": "[dbo].[GeoData]",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "string",
+            "sourceColumn": "id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "longitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "latitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "geometryType",
+            "dataType": "string",
+            "sourceColumn": "geometryType",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "geometryType",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "timezone",
+            "dataType": "string",
+            "sourceColumn": "timezone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "timezone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "GeoData",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Magnitude Type",
+        "sourceLineageTag": "[dbo].[Magnitude Type]",
+        "columns": [
+          {
+            "name": "MagnitudeID",
+            "dataType": "int64",
+            "sourceColumn": "MagnitudeID",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "MagnitudeID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "magnitudeType",
+            "dataType": "string",
+            "sourceColumn": "magnitudeType",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "magnitudeType",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Magnitude Type",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
     "expressions": [
       {
         "name": "DatabaseQuery",
@@ -25,7 +1128,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\"]"
+        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"Magnitude Type\",\"GeoData\",\"Event Details\",\"Fact Table\",\"FactTable\",\"Earthquake_Data\"]"
       },
       {
         "name": "SourceLineageTagType",
