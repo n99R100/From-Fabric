@@ -119,7 +119,7 @@ class jsonToDF extends DataProcessor {
                         col("feature.properties.tz").cast("string").as("timezone"),
                         col("feature.properties.url").as("url"),
                         col("feature.properties.detail").as("detailUrl"),
-                        col("feature.properties.felt").cast("string").as("felt"),
+                        col("feature.properties.felt").cast("Long").as("felt"),
                         col("feature.properties.cdi").as("cdi"),
                         col("feature.properties.mmi").as("mmi"),
                         col("feature.properties.alert").as("alert"),
