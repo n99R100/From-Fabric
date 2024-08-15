@@ -1112,6 +1112,115 @@
             "value": "False"
           }
         ]
+      },
+      {
+        "name": "Pipeline_Logs",
+        "sourceLineageTag": "[dbo].[Pipeline_Logs]",
+        "columns": [
+          {
+            "name": "Workspace_ID",
+            "dataType": "string",
+            "sourceColumn": "Workspace_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Workspace_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Pipeline_ID",
+            "dataType": "string",
+            "sourceColumn": "Pipeline_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Pipeline_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Pipeline_Name",
+            "dataType": "string",
+            "sourceColumn": "Pipeline_Name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Pipeline_Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Pipeline_Run_ID",
+            "dataType": "string",
+            "sourceColumn": "Pipeline_Run_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Pipeline_Run_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Pipeline_Trigger_Time",
+            "dataType": "dateTime",
+            "sourceColumn": "Pipeline_Trigger_Time",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "Pipeline_Trigger_Time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Pipeline_Trigger_Type",
+            "dataType": "string",
+            "sourceColumn": "Pipeline_Trigger_Type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Pipeline_Trigger_Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Pipeline_Logs",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
       }
     ],
     "expressions": [
@@ -1128,7 +1237,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"Magnitude Type\",\"GeoData\",\"Event Details\",\"Fact Table\",\"FactTable\",\"Earthquake_Data\"]"
+        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"Pipeline_Logs\",\"Magnitude Type\",\"GeoData\",\"Event Details\",\"Fact Table\",\"FactTable\",\"Earthquake_Data\"]"
       },
       {
         "name": "SourceLineageTagType",
