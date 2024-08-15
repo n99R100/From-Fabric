@@ -134,6 +134,126 @@
         },
         "name": "End Date",
         "dependsOn": []
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[InsertPipelineLog]",
+          "storedProcedureParameters": {
+            "Pipeline_ID": {
+              "value": {
+                "value": "@pipeline().Pipeline",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Pipeline_Name": {
+              "value": {
+                "value": "@pipeline().PipelineName",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Pipeline_Run_ID": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Pipeline_Trigger_Time": {
+              "value": {
+                "value": "@pipeline().TriggerTime",
+                "type": "Expression"
+              },
+              "type": "DateTime"
+            },
+            "Pipeline_Trigger_Type": {
+              "value": {
+                "value": "@pipeline().TriggerType",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "Workspace_ID": {
+              "value": {
+                "value": "@pipeline().DataFactory",
+                "type": "Expression"
+              },
+              "type": "String"
+            }
+          }
+        },
+        "linkedService": {
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "691d2112-4a50-410c-9d35-f3052a184075",
+              "endpoint": "kylufgqjubuu3evatq7fgvg73i-jjs5pt6adk5ena7bprnlw3oeye.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "cfd7654a-1ac0-46ba-83e1-7c5abb6dc4c1"
+            },
+            "annotations": []
+          },
+          "name": "WH_A",
+          "objectId": "691d2112-4a50-410c-9d35-f3052a184075"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Pipeline Logs Collector",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "cb636269-b5bc-45aa-9498-cede639c7b2b",
+          "workspaceId": "cfd7654a-1ac0-46ba-83e1-7c5abb6dc4c1",
+          "notifyOption": "NoNotification"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Dim Tables",
+        "dependsOn": [
+          {
+            "activity": "Json To Delta",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "8b3190d7-2783-4924-8673-f5a580358ef2",
+          "workspaceId": "cfd7654a-1ac0-46ba-83e1-7c5abb6dc4c1",
+          "notifyOption": "NoNotification"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Fact tables",
+        "dependsOn": [
+          {
+            "activity": "Dim Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
       }
     ],
     "variables": {
