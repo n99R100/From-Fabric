@@ -177,6 +177,9 @@ case class PipelineRunQueryRequest(
 
 // CELL ********************
 
+import spray.json._
+
+
 object JsonProtocol extends DefaultJsonProtocol {
   implicit val mapFormat: JsonFormat[Map[String, String]] = mapFormat[String, String]
   implicit val pipelineRunQueryRequestFormat: RootJsonFormat[PipelineRunQueryRequest] = jsonFormat4(PipelineRunQueryRequest)
@@ -266,7 +269,9 @@ object FabricApiClientApp extends LazyLogging {
     
     try {
 
-      val pids: Seq[String] = Seq("7793d7b7-ba14-497c-84f3-badd08d31bca")
+      val tdf = spark.read.table("Pipeline_Logs")
+
+      val pids: Seq[String] = tdf.select("Pipeline_Run_ID").distinct().as[String].collect().toSeq
       
       val wid: String = mssparkutils.runtime.context.get("currentWorkspaceId") match {
         case Some(value: String) => value
@@ -338,7 +343,9 @@ FabricApiClientApp.main(Array.empty[String])
 // CELL ********************
 
 trait DataProcessor {
-    def filterAndFlattenJson(json: JValue): JValue
+    def flattenStructSchema(schema: StructType, prefix: String = null): Array[org.apache.spark.sql.Column]
+    def explodeArrayColumns(df: DataFrame): DataFrame
+    def processDataFrame(df: DataFrame): DataFrame
     def process(filename: String): DataFrame
 }
 
@@ -354,45 +361,45 @@ trait DataProcessor {
 class jsonToDF extends DataProcessor {
   private val logger = org.apache.log4j.LogManager.getLogger(getClass.getName)
 
-  def filterAndFlattenJson(json: JValue): JValue = json match {
-    case JObject(fields) =>
-        JObject(fields.flatMap { case (k, v) =>
-        v match {
-            case JObject(mapFields) =>
-            mapFields.map { case (innerK, innerV) =>
-                (s"${k}_${innerK}" -> filterAndFlattenJson(innerV))
-            }
-            case other =>
-            List(k -> filterAndFlattenJson(other))
-        }
-        })
-    case JArray(arr) =>
-        JArray(arr.map(filterAndFlattenJson))
-    case other => other
+  def flattenStructSchema(schema: StructType, prefix: String = null): Array[org.apache.spark.sql.Column] = {
+    schema.fields.flatMap(f => {
+      val columnName = if (prefix == null) f.name else (prefix + "." + f.name)
+
+      f.dataType match {
+        case st: StructType => flattenStructSchema(st, columnName)
+        case _ => Array(col(columnName).as(columnName.replace(".", "_")))
+      }
+    })
+  }
+
+  def explodeArrayColumns(df: DataFrame): DataFrame = {
+    val arrayColumns = df.schema.fields.collect {
+      case field if field.dataType.isInstanceOf[ArrayType] => field.name
     }
+
+    arrayColumns.foldLeft(df)((tempDf, colName) => tempDf.withColumn(colName, explode_outer(col(colName))))
+  }
+
+  def processDataFrame(df: DataFrame): DataFrame = {
+    if (df.schema.fields.exists(f => f.dataType.isInstanceOf[ArrayType])) {
+      val explodedDf = explodeArrayColumns(df)
+      processDataFrame(explodedDf)
+    } else if (df.schema.fields.exists(f => f.dataType.isInstanceOf[StructType])) {
+      val flattenedDf = df.select(flattenStructSchema(df.schema):_*)
+      processDataFrame(flattenedDf)
+    } else {
+      df
+    }
+  }
 
   def process(filename: String): DataFrame = {
     logger.info("Processing DataFrame")
 
-    val jsonData = spark.read.textFile(s"abfss://cfd7654a-1ac0-46ba-83e1-7c5abb6dc4c1@onelake.dfs.fabric.microsoft.com/88d86d1c-2274-429c-a9b6-2fa93bb7a621/Files/Pipeline Run Logs/Not-Processed/$filename").collect().mkString
+    val df = spark.read.option("multiline", "true").json(s"Files/Pipeline Run Logs/Not-Processed/$filename")
 
-    val json = parse(jsonData)
+    val processedDf = processDataFrame(df)
 
-    val filteredJson = filterAndFlattenJson(json)
-
-    val jsonString = compact(render(filteredJson))
-
-    val jsonRDD = spark.sparkContext.parallelize(Seq(jsonString))
-
-    val df: DataFrame = spark.read.json(jsonRDD)
-
-    val columnsToDrop = df.schema.fields.collect {
-    case field: StructField if field.dataType.isInstanceOf[ArrayType] || field.dataType.isInstanceOf[StructType] => field.name
-    }
-
-    val dfCleaned = df.drop(columnsToDrop: _*)
-
-    dfCleaned
+    processedDf
   }
 }
 
@@ -536,6 +543,10 @@ SparkApp.main
 // META   "language": "scala",
 // META   "language_group": "synapse_pyspark"
 // META }
+
+// MARKDOWN ********************
+
+// #
 
 // CELL ********************
 
