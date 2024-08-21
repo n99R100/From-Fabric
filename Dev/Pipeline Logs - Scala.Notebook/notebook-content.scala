@@ -271,7 +271,10 @@ object FabricApiClientApp extends LazyLogging {
 
       val tdf = spark.read.table("Pipeline_Logs")
 
-      val pids: Seq[String] = tdf.select("Pipeline_Run_ID").distinct().as[String].collect().toSeq
+      val A: DataFrame = spark.read.table("Pipeline_Logs")
+      val B: DataFrame = spark.read.table("Pipeline_Run_Logs")
+      val C: DataFrame = A.select("Pipeline_Run_ID").join(B.select("pipelineRunId"), A("Pipeline_Run_ID") === B("pipelineRunId"), "left_anti")
+      val pids: Seq[String] = C.select("Pipeline_Run_ID").distinct().as[String].collect().toSeq
       
       val wid: String = mssparkutils.runtime.context.get("currentWorkspaceId") match {
         case Some(value: String) => value

@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[aee66e92134e4b848b05655ebbb5a00e_e779a0bc_002D9bcd_002D4f7f_002D9c41_002Db0789fcf6703] (
+CREATE TABLE [dbo].[6de34ee1c5c045a5b1cffde15e848a0d_81e136af_002D102b_002D4723_002D86a4_002Df1e59d0bac33] (
 
 	[Column1] varchar(8000) NULL, 
 	[Column2] float NULL, 
