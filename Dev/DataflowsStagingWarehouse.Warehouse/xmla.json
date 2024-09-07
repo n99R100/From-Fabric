@@ -13,102 +13,8 @@
     "sourceQueryCulture": "en-US",
     "tables": [
       {
-        "name": "6de34ee1c5c045a5b1cffde15e848a0d_321a201e_002Dcab3_002D4ccb_002Da412_002Dc866d0707d57",
-        "sourceLineageTag": "[dbo].[6de34ee1c5c045a5b1cffde15e848a0d_321a201e_002Dcab3_002D4ccb_002Da412_002Dc866d0707d57]",
-        "columns": [
-          {
-            "name": "Column1",
-            "dataType": "string",
-            "sourceColumn": "Column1",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Column1",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "Column2",
-            "dataType": "string",
-            "sourceColumn": "Column2",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Column2",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "Column3",
-            "dataType": "string",
-            "sourceColumn": "Column3",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Column3",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "Column4",
-            "dataType": "string",
-            "sourceColumn": "Column4",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Column4",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "Column5",
-            "dataType": "string",
-            "sourceColumn": "Column5",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Column5",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          }
-        ],
-        "partitions": [
-          {
-            "name": "{{Partition_Name}}",
-            "mode": "directLake",
-            "source": {
-              "type": "entity",
-              "entityName": "6de34ee1c5c045a5b1cffde15e848a0d_321a201e_002Dcab3_002D4ccb_002Da412_002Dc866d0707d57",
-              "expressionSource": "DatabaseQuery",
-              "schemaName": "dbo"
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "IsTableInBiModel",
-            "value": "False"
-          }
-        ]
-      },
-      {
-        "name": "6de34ee1c5c045a5b1cffde15e848a0d_81e136af_002D102b_002D4723_002D86a4_002Df1e59d0bac33",
-        "sourceLineageTag": "[dbo].[6de34ee1c5c045a5b1cffde15e848a0d_81e136af_002D102b_002D4723_002D86a4_002Df1e59d0bac33]",
+        "name": "76309655d0044611939b934d195a1fc0_6185cc66_002Ded6c_002D4b4f_002Dbd89_002D42cf42c34b83",
+        "sourceLineageTag": "[dbo].[76309655d0044611939b934d195a1fc0_6185cc66_002Ded6c_002D4b4f_002Dbd89_002D42cf42c34b83]",
         "columns": [
           {
             "name": "Column1",
@@ -587,11 +493,11 @@
         ],
         "partitions": [
           {
-            "name": "{{Partition_Name}}",
+            "name": "{{Dataset_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
-              "entityName": "6de34ee1c5c045a5b1cffde15e848a0d_81e136af_002D102b_002D4723_002D86a4_002Df1e59d0bac33",
+              "entityName": "76309655d0044611939b934d195a1fc0_6185cc66_002Ded6c_002D4b4f_002Dbd89_002D42cf42c34b83",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }
@@ -605,8 +511,102 @@
         ]
       },
       {
-        "name": "85bd6961eb524b1c909858d9b42594a1_9e6274bd_002Dd575_002D43d1_002D9a8e_002D93a8ff7499ab",
-        "sourceLineageTag": "[dbo].[85bd6961eb524b1c909858d9b42594a1_9e6274bd_002Dd575_002D43d1_002D9a8e_002D93a8ff7499ab]",
+        "name": "76309655d0044611939b934d195a1fc0_b682d8db_002D7967_002D4534_002D9b9d_002D4b28eada5c89",
+        "sourceLineageTag": "[dbo].[76309655d0044611939b934d195a1fc0_b682d8db_002D7967_002D4534_002D9b9d_002D4b28eada5c89]",
+        "columns": [
+          {
+            "name": "Column1",
+            "dataType": "string",
+            "sourceColumn": "Column1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Column1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Column2",
+            "dataType": "string",
+            "sourceColumn": "Column2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Column2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Column3",
+            "dataType": "string",
+            "sourceColumn": "Column3",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Column3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Column4",
+            "dataType": "string",
+            "sourceColumn": "Column4",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Column4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Column5",
+            "dataType": "string",
+            "sourceColumn": "Column5",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Column5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "76309655d0044611939b934d195a1fc0_b682d8db_002D7967_002D4534_002D9b9d_002D4b28eada5c89",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "916e32ec414048a089d0a22a701aa695_516d0749_002D70ae_002D490f_002Db227_002D18225ee14146",
+        "sourceLineageTag": "[dbo].[916e32ec414048a089d0a22a701aa695_516d0749_002D70ae_002D490f_002Db227_002D18225ee14146]",
         "columns": [
           {
             "name": "Column1",
@@ -1085,11 +1085,11 @@
         ],
         "partitions": [
           {
-            "name": "{{Partition_Name}}",
+            "name": "{{Dataset_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
-              "entityName": "85bd6961eb524b1c909858d9b42594a1_9e6274bd_002Dd575_002D43d1_002D9a8e_002D93a8ff7499ab",
+              "entityName": "916e32ec414048a089d0a22a701aa695_516d0749_002D70ae_002D490f_002Db227_002D18225ee14146",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }
@@ -1103,8 +1103,8 @@
         ]
       },
       {
-        "name": "a66f56ae07dd4bc88bf1ecc74d954f93_36b373b8_002Dd5b7_002D4eff_002Dba8e_002Dc8167f98388a",
-        "sourceLineageTag": "[dbo].[a66f56ae07dd4bc88bf1ecc74d954f93_36b373b8_002Dd5b7_002D4eff_002Dba8e_002Dc8167f98388a]",
+        "name": "a9539eaa776a4492998fbee9784f1b22_e613d59b_002Dbe30_002D4a3c_002D9cdc_002Db7590b3e2878",
+        "sourceLineageTag": "[dbo].[a9539eaa776a4492998fbee9784f1b22_e613d59b_002Dbe30_002D4a3c_002D9cdc_002Db7590b3e2878]",
         "columns": [
           {
             "name": "Column1",
@@ -1583,11 +1583,11 @@
         ],
         "partitions": [
           {
-            "name": "{{Partition_Name}}",
+            "name": "{{Dataset_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
-              "entityName": "a66f56ae07dd4bc88bf1ecc74d954f93_36b373b8_002Dd5b7_002D4eff_002Dba8e_002Dc8167f98388a",
+              "entityName": "a9539eaa776a4492998fbee9784f1b22_e613d59b_002Dbe30_002D4a3c_002D9cdc_002Db7590b3e2878",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }
@@ -1601,8 +1601,8 @@
         ]
       },
       {
-        "name": "e8b82bf621bc4b9ea33c961afff73052_6d978394_002D552a_002D45c6_002D9dc9_002Da4b1416befde",
-        "sourceLineageTag": "[dbo].[e8b82bf621bc4b9ea33c961afff73052_6d978394_002D552a_002D45c6_002D9dc9_002Da4b1416befde]",
+        "name": "e387df62bde64abca3dff5c79f595ef8_20501c05_002Da7e8_002D4409_002Db09c_002Df3eb0b2aa399",
+        "sourceLineageTag": "[dbo].[e387df62bde64abca3dff5c79f595ef8_20501c05_002Da7e8_002D4409_002Db09c_002Df3eb0b2aa399]",
         "columns": [
           {
             "name": "Column1",
@@ -1677,11 +1677,11 @@
         ],
         "partitions": [
           {
-            "name": "{{Partition_Name}}",
+            "name": "{{Dataset_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
-              "entityName": "e8b82bf621bc4b9ea33c961afff73052_6d978394_002D552a_002D45c6_002D9dc9_002Da4b1416befde",
+              "entityName": "e387df62bde64abca3dff5c79f595ef8_20501c05_002Da7e8_002D4409_002Db09c_002Df3eb0b2aa399",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }
@@ -1695,8 +1695,8 @@
         ]
       },
       {
-        "name": "e8b82bf621bc4b9ea33c961afff73052_fad0868e_002Df964_002D4f75_002Db3bf_002D5e9c3f7dd0aa",
-        "sourceLineageTag": "[dbo].[e8b82bf621bc4b9ea33c961afff73052_fad0868e_002Df964_002D4f75_002Db3bf_002D5e9c3f7dd0aa]",
+        "name": "e387df62bde64abca3dff5c79f595ef8_60862492_002Dd1fe_002D4dd3_002Db54c_002D6b646b03587c",
+        "sourceLineageTag": "[dbo].[e387df62bde64abca3dff5c79f595ef8_60862492_002Dd1fe_002D4dd3_002Db54c_002D6b646b03587c]",
         "columns": [
           {
             "name": "Column1",
@@ -2175,11 +2175,11 @@
         ],
         "partitions": [
           {
-            "name": "{{Partition_Name}}",
+            "name": "{{Dataset_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
-              "entityName": "e8b82bf621bc4b9ea33c961afff73052_fad0868e_002Df964_002D4f75_002Db3bf_002D5e9c3f7dd0aa",
+              "entityName": "e387df62bde64abca3dff5c79f595ef8_60862492_002Dd1fe_002D4dd3_002Db54c_002D6b646b03587c",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }
@@ -2204,6 +2204,10 @@
       {
         "name": "__PBI_TimeIntelligenceEnabled",
         "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"76309655d0044611939b934d195a1fc0_6185cc66_002Ded6c_002D4b4f_002Dbd89_002D42cf42c34b83\",\"76309655d0044611939b934d195a1fc0_b682d8db_002D7967_002D4534_002D9b9d_002D4b28eada5c89\",\"916e32ec414048a089d0a22a701aa695_516d0749_002D70ae_002D490f_002Db227_002D18225ee14146\",\"e387df62bde64abca3dff5c79f595ef8_60862492_002Dd1fe_002D4dd3_002Db54c_002D6b646b03587c\",\"e387df62bde64abca3dff5c79f595ef8_20501c05_002Da7e8_002D4409_002Db09c_002Df3eb0b2aa399\",\"a9539eaa776a4492998fbee9784f1b22_e613d59b_002Dbe30_002D4a3c_002D9cdc_002Db7590b3e2878\"]"
       },
       {
         "name": "SourceLineageTagType",
